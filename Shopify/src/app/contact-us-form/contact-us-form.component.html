@@ -1,0 +1,32 @@
+<div class="wrapper">
+    <div class="title">
+      <h1>contact us form</h1>
+    </div>
+    <form [formGroup]="contactusform">
+    <div class="form-group">
+      <label>Username</label>
+      <input formControlName="username" input type="text" class="form-control">
+    </div>
+     
+    <div class="form-group">
+      <label>email</label>
+      <input formControlName="email" input type="email" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>phone</label>
+      <input formControlName="phone" input type="text" pattern="[0-9][0-9]{9}" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>usermessage</label>
+      <input formControlName="usermessage" input type="text" class="form-control">
+    </div>
+
+    <button class="btn btn-primary" type="submit" (click)="onSubmit()">submit</button>
+
+    </form>
+    {{contactusform.value | json}}
+    {{message}}
+  </div>
+  
