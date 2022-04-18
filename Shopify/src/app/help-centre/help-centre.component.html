@@ -4,14 +4,20 @@
       <h1>Help Center</h1>
     </div>
     <form [formGroup]="helpcentreform">
-    <div class="form-group">
+    <div class="form-group" >
       <label>Order No.</label>
-      <input formControlName="orderno" input type="text" class="form-control">
+      <input formControlName="orderno" input type="text" class="form-control" minlength="4" required>
+    </div>
+    <div class="error" *ngIf="orderno.invalid && orderno.touched">
+      Order no. needs a minimum length of 4.
     </div>
      
     <div class="form-group">
       <label>Product Details</label>
       <input formControlName="productdetails" input type="email" class="form-control">
+    </div>
+    <div class="error" *ngIf="productdetails.invalid && productdetails.touched">
+      Input Fields is empty.
     </div>
 
     <div class="form-group">
@@ -26,8 +32,11 @@
       <label>Descriptions</label>
       <input formControlName="descriptions" input type="text" class="form-control">
     </div>
+    <div class="error" *ngIf="descriptions.invalid && descriptions.touched">
+      Descriptions needs a minlength of 10
+    </div>
 
-    <button class="btn btn-primary" type="submit" (click)="onSubmit()">Submit</button>
+    <button [disabled]="helpcentreform.invalid" class="btn btn-primary" type="submit" (click)="onSubmit()">Submit</button>
     <button class="btn btn-primary"  (click)="resetForm()">Reset</button>
 
     </form>

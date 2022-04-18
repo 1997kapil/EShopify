@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { DisputeServiceService } from '../service/dispute-service.service';
 
 @Component({
@@ -10,14 +10,29 @@ import { DisputeServiceService } from '../service/dispute-service.service';
 })
 export class HelpCentreComponent implements OnInit, OnDestroy {
     helpcentreform = new FormGroup({
-    id: new FormControl(null),
-    orderno: new FormControl(''),
-    productdetails: new FormControl(''),
-    problemtype: new FormControl(''),
-    descriptions: new FormControl('')
+    id: new FormControl(0),
+    orderno: new FormControl('',[Validators.required]),
+    productdetails: new FormControl('',[Validators.required]),
+    problemtype: new FormControl('',[Validators.required]),
+    descriptions: new FormControl('',[Validators.required, Validators.nullValidator, Validators.minLength(10)])
     })
     message:any;
   constructor(private httpClient: HttpClient, private disputeServiceService: DisputeServiceService) { }
+
+  get orderno() {
+    return this.helpcentreform.get("orderno");
+  }
+
+  get productdetails() {
+    return this.helpcentreform.get("productdetails");
+  }
+
+   get descriptions() {
+    return this.helpcentreform.get("descriptions");
+  }
+
+
+
 
   ngOnInit(): void {
     if (this.disputeServiceService.problemObject) {
@@ -26,7 +41,7 @@ export class HelpCentreComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    this.httpClient.post("http://localhost:3000/api/appointment/help", this.helpcentreform.value).subscribe(sub => {
+    this.httpClient.post("http://localhost:5000/api/HelpCenter/add-problem-details", this.helpcentreform.value).subscribe(sub => {
       this.message = (sub as any).message;
     }
     );

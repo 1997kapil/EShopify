@@ -82,6 +82,10 @@
     text-transform: uppercase;
 }
 
+.error {
+  color: red;
+}
+
 @media screen and (max-width: 600px){
   .contact-form{
     flex-direction: column;

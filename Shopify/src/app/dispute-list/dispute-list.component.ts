@@ -15,7 +15,7 @@ export class DisputeListComponent implements OnInit {
   constructor(private httpClient: HttpClient, private disputeServiceService: DisputeServiceService, private router: Router) { }
 
   ngOnInit(): void {
-    this.httpClient.get("http://localhost:3000/api/appointment/all").subscribe(res => {
+    this.httpClient.get("http://localhost:5000/api/HelpCenter/get-all-problem-details").subscribe(res => {
       this.disputeList = res;
     });
   }
@@ -26,7 +26,7 @@ export class DisputeListComponent implements OnInit {
   }
 
   deleteProblem(id: any) {
-    this.httpClient.delete("http://localhost:3000/api/appointment/help/" + id).subscribe(res =>{
+    this.httpClient.delete("http://localhost:5000/api/HelpCenter/delete-problem-details/" + id).subscribe(res =>{
      if (((res as any).message).includes("sucess")) {
        this.disputeList = this.disputeList.filter(item => item.id != id);
      }
