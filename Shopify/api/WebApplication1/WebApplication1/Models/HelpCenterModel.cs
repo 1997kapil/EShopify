@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Models
 {
-  public class HelpCenter
+  public class HelpCenterModel
   {
+
     public int id { get; set; }
     public string orderno { get; set; }
     public string productdetails { get; set; }

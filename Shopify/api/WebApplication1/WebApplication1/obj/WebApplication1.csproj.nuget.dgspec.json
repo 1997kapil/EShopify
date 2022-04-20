@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyGitProjects\\EShopify\\Shopify\\api\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
+    "D:\\.net project\\api\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "D:\\MyGitProjects\\EShopify\\Shopify\\api\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {
+    "D:\\.net project\\api\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyGitProjects\\EShopify\\Shopify\\api\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "D:\\.net project\\api\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "D:\\MyGitProjects\\EShopify\\Shopify\\api\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectPath": "D:\\.net project\\api\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
         "packagesPath": "C:\\Users\\kapil104137\\.nuget\\packages\\",
-        "outputPath": "D:\\MyGitProjects\\EShopify\\Shopify\\api\\WebApplication1\\WebApplication1\\obj\\",
+        "outputPath": "D:\\.net project\\api\\WebApplication1\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kapil104137\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -107,6 +107,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL.Design": {
               "target": "Package",
               "version": "[1.1.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.3.0, )"
             }
           },
           "imports": [
