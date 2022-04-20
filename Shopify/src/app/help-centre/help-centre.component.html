@@ -6,7 +6,7 @@
     <form [formGroup]="helpcentreform">
     <div class="form-group" >
       <label>Order No.</label>
-      <input formControlName="orderno" input type="text" class="form-control" minlength="4" required>
+      <input formControlName="orderno" input type="text" class="form-control" minlength="4">
     </div>
     <div class="error" *ngIf="orderno.invalid && orderno.touched">
       Order no. needs a minimum length of 4.

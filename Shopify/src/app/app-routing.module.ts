@@ -10,6 +10,7 @@ import { MensComponent } from './Mens/Mens.component';
 import { ContactUsFormComponent } from './contact-us-form/contact-us-form.component';
 import { HelpCentreComponent } from './help-centre/help-centre.component';
 import { DisputeListComponent } from './dispute-list/dispute-list.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 const routes: Routes = [
   {
     path: '',
@@ -56,6 +57,11 @@ const routes: Routes = [
   {
     path: 'dispute-list',
     component: DisputeListComponent,
+  },
+
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
   }
 
 

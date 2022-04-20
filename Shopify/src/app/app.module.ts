@@ -22,6 +22,7 @@ import { ContactUsFormComponent } from './contact-us-form/contact-us-form.compon
 import { HelpCentreComponent } from './help-centre/help-centre.component';
 import { DisputeListComponent } from './dispute-list/dispute-list.component';
 import { DisputeServiceService } from './service/dispute-service.service';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { DisputeServiceService } from './service/dispute-service.service';
     ContactUsFormComponent,
     HelpCentreComponent,
     DisputeListComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,

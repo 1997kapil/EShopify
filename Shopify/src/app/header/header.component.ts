@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthServiceService } from '../service/auth-service.service';
+import { CartService } from 'src/app/service/cart.service';
+import { ProductpageService } from 'src/app/service/productpage.service';
+import { IProductpage } from 'src/IProductpage'; 
 
 @Component({
   selector: 'app-header',
@@ -9,7 +12,14 @@ import { AuthServiceService } from '../service/auth-service.service';
 export class HeaderComponent implements OnInit {
   isAdmin: boolean;
   username: string = 'Guest';
-  constructor(private auth: AuthServiceService) {}
+  public totalItem : number = 0;
+  public searchTerm !: string;
+
+   //added
+   productPage:IProductpage[]=[];
+
+  constructor(private auth: AuthServiceService, 
+    private cartService:CartService,private productpageService:ProductpageService) {}
 
   ngOnInit() {
     this.username = sessionStorage.getItem('loggedUser');
@@ -17,4 +27,6 @@ export class HeaderComponent implements OnInit {
       this.isAdmin = true;
     }
   }
+
+ 
 }

@@ -1,18 +1,19 @@
 .wrapper{
     position: absolute;
+    margin-top: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
     max-width: 550px;
-    background: hsla(207, 87%, 59%, 0.932);
+    background: #f2f2f2;
     padding: 30px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
   }
   
   .wrapper .title h1{
-    color: #c5ecfd;
+    color: #000000;
     text-align: center;
     margin-bottom: 25px;
   }
