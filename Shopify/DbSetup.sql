@@ -9,6 +9,8 @@ CREATE TABLE Contact_Us_Form
 
 
 
+
+
 create table help_center(
 Id INT NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 OrderNo varchar(20),
@@ -69,3 +71,47 @@ CREATE TABLE public."Productpages" (
 	id, "productId", "productName", "productPrice", "productImage", "productDescription")
 	VALUES ('10', '11305', 'Boys Blazer', '600', 'assets/images/boys blazer.jpg ', '1.Material:Cotton 2.Style:Casual wear for 5-6 year kids.3.Care Instructions:Machine Wash.4.This stylish complete party clothing set with fashionable look.');
 	
+
+
+	INSERT INTO public.shopping_cart( name, price)
+	VALUES ('Red Fit',500);
+	
+	INSERT INTO public.shopping_cart(
+	 name, price)
+	VALUES ( 'Men Black Tshirt', '500');
+	
+	INSERT INTO public.shopping_cart(
+	 name, price)
+	VALUES ( 'Men Blue Shirt', '500');
+	
+	INSERT INTO public.shopping_cart(
+	 name, price)
+	VALUES ( 'Men Polo Tshirt', '500');
+	
+	INSERT INTO public.shopping_cart(
+	 name, price)
+	VALUES ( 'Women denim dress', '500');
+
+
+
+
+
+
+	INSERT INTO public.checkout( name, price)
+	VALUES ('Red Fit',500);
+	
+	INSERT INTO public.checkout(
+	 name, price)
+	VALUES ( 'Men Black Tshirt', '500');
+	
+	INSERT INTO public.checkout(
+	 name, price)
+	VALUES ( 'Men Blue Shirt', '500');
+	
+	INSERT INTO public.checkout(
+	 name, price)
+	VALUES ( 'Men Polo Tshirt', '500');
+	
+	INSERT INTO public.checkout(
+	 name, price)
+	VALUES ( 'Women denim dress', '500');

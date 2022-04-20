@@ -30,6 +30,7 @@ export class MensComponent implements OnInit {
   }
 
   addToCart(name: string) {
+    alert('Added to cart');
     this.cartService.addMensToCart(name);
   }
   ngOnInit() {

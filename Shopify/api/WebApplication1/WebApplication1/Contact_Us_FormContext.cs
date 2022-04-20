@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -17,15 +17,18 @@ namespace WebApplication1
         {
         }
 
+        public virtual DbSet<Checkout> Checkouts { get; set; }
         public virtual DbSet<ContactU> ContactUs { get; set; }
         public virtual DbSet<HelpCenter> HelpCenters { get; set; }
+        public virtual DbSet<Productpage> Productpages { get; set; }
+        public virtual DbSet<ShoppingCart> ShoppingCarts { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseNpgsql("host=localhost;database=Contact_Us_Form;user id=postgres;password=root;");
+                optionsBuilder.UseNpgsql("host=localhost;database=Contact_Us_Form ;user id=postgres;password=root;");
             }
         }
 
@@ -33,9 +36,25 @@ namespace WebApplication1
         {
             modelBuilder.HasAnnotation("Relational:Collation", "English_United States.1252");
 
+            modelBuilder.Entity<Checkout>(entity =>
+            {
+
+                entity.ToTable("checkout");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("id")
+                    .UseIdentityAlwaysColumn();
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(255)
+                    .HasColumnName("name");
+
+                entity.Property(e => e.Price).HasColumnName("price");
+            });
+
             modelBuilder.Entity<ContactU>(entity =>
             {
-                entity.HasNoKey();
 
                 entity.ToTable("contact_us");
 
@@ -81,6 +100,45 @@ namespace WebApplication1
                 entity.Property(e => e.Productdetails)
                     .HasMaxLength(500)
                     .HasColumnName("productdetails");
+            });
+
+            modelBuilder.Entity<Productpage>(entity =>
+            {
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.ProductDescription)
+                    .HasMaxLength(255)
+                    .HasColumnName("productDescription");
+
+                entity.Property(e => e.ProductId).HasColumnName("productId");
+
+                entity.Property(e => e.ProductImage)
+                    .HasMaxLength(255)
+                    .HasColumnName("productImage");
+
+                entity.Property(e => e.ProductName)
+                    .HasMaxLength(255)
+                    .HasColumnName("productName");
+
+                entity.Property(e => e.ProductPrice).HasColumnName("productPrice");
+            });
+
+            modelBuilder.Entity<ShoppingCart>(entity =>
+            {
+
+                entity.ToTable("shopping_cart");
+
+                entity.Property(e => e.Id)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("id")
+                    .UseIdentityAlwaysColumn();
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(255)
+                    .HasColumnName("name");
+
+                entity.Property(e => e.Price).HasColumnName("price");
             });
 
             OnModelCreatingPartial(modelBuilder);

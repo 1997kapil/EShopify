@@ -13,12 +13,10 @@ namespace WebApplication1.Controllers
   [ApiController]
   public class HelpCenterController : ControllerBase
   {
-    private readonly IConfiguration _configuration;
     private Contact_Us_FormContext _context;
 
-    public HelpCenterController(IConfiguration configuration, Contact_Us_FormContext context)
-    {
-      _configuration = configuration;
+    public HelpCenterController( Contact_Us_FormContext context){
+      
       _context = context;
     }
 
