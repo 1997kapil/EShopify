@@ -17,6 +17,8 @@ import { UsersComponent } from './users/users.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { MensComponent } from './Mens/Mens.component';
 import { MensService } from './service/Mens.service';
+import { WomensComponent } from './womens/womens.component';
+import { WomensService } from './service/Womens.service';
 import { ClothesService } from './service/Clothes.service';
 import { ContactUsFormComponent } from './contact-us-form/contact-us-form.component';
 import { HelpCentreComponent } from './help-centre/help-centre.component';
@@ -37,6 +39,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     UsersComponent,
     RegistrationComponent,
     MensComponent,
+    WomensComponent,
     ContactUsFormComponent,
     HelpCentreComponent,
     DisputeListComponent,
@@ -53,6 +56,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     DisputeServiceService,
     { provide: DataService, useClass: DataService },
     { provide: DataService, useClass: MensService },
+    { provide: DataService, useClass: WomensService},
     { provide: DataService, useClass: ClothesService },
   ],
   bootstrap: [AppComponent],

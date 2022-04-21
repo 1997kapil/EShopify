@@ -7,6 +7,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { UsersComponent } from './users/users.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { MensComponent } from './Mens/Mens.component';
+import { WomensComponent } from './womens/womens.component';
 import { ContactUsFormComponent } from './contact-us-form/contact-us-form.component';
 import { HelpCentreComponent } from './help-centre/help-centre.component';
 import { DisputeListComponent } from './dispute-list/dispute-list.component';
@@ -44,6 +45,12 @@ const routes: Routes = [
     path: 'Mens',
     component: MensComponent,
   },
+
+  {
+    path: 'Womens',
+    component: WomensComponent,
+  },
+  
   {
     path: 'contact-us-form',
     component: ContactUsFormComponent,

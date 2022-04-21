@@ -34,6 +34,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" routerLink="/Mens">Mens</a>
+          <a class="dropdown-item" routerLink="/Womens">Womens</a>
         </div>
       </li>
 
@@ -47,7 +48,7 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/help-centre">Help Centre </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="isAdmin">
         <a class="nav-link" routerLink="/dispute-list">Dispute List </a>
       </li>
     </ul>
