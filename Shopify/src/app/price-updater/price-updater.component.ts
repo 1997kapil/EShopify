@@ -14,8 +14,7 @@ export class PriceUpdaterComponent implements OnInit {
   update = new EventEmitter<number>();
   constructor() {}
   updatePrice() {
-    //the new value must be sent back to the parent
-    //emit a custom event with the latest price back to the parent
+    
     this.update.emit(this.pricevalue);
   }
 

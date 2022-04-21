@@ -1,16 +1,3 @@
-CREATE TABLE Contact_Us_Form
-(
-    Id INT NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    Name VARCHAR(30) NOT NULL,
-    Email Address VARCHAR(200) NULL,
-    Phone_no INT NOT NULL,
-    Message VARCHAR(500) NULL
-);
-
-
-
-
-
 create table help_center(
 Id INT NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 OrderNo varchar(20),
@@ -30,6 +17,39 @@ CREATE TABLE public."Productpages" (
     "productDescription" character varying(255)
 );
 
+-- Table: public.checkout
+
+-- DROP TABLE public.checkout;
+
+CREATE TABLE public.checkout
+(
+    id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    name character varying(255) COLLATE pg_catalog."default",
+    price integer,
+    CONSTRAINT id PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.checkout
+    OWNER to postgres;
+
+-- Table: public.shopping_cart
+
+-- DROP TABLE public.shopping_cart;
+
+CREATE TABLE public.shopping_cart
+(
+    id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    name character varying(255) COLLATE pg_catalog."default",
+    price integer,
+    CONSTRAINT shopping_cart_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.shopping_cart
+    OWNER to postgres;
 
     INSERT INTO public."Productpages"(
 	id, "productId", "productName", "productPrice", "productImage", "productDescription")
