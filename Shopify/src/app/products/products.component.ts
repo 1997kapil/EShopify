@@ -40,9 +40,6 @@ export class ProductsComponent implements OnInit {
     if (this.username == 'admin') {
       this.isAdmin = true;
     }
-    // this.auth.getUserName().subscribe((newusername) => {
-    //   this.username = newusername;
-    //   console.log(`USERNAME IS ${this.username}`);
-    // });
+   
   }
 }

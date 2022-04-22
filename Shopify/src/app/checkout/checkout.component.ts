@@ -34,28 +34,7 @@ export class CheckoutComponent implements OnInit {
   remove(name: string) {
     this.cartService.removeFromCart(name);
   }
-    //this.cartService.getProducts()
-    //.subscribe(res=>{
-      //this.products = res;    
-      //const cartProduct={products:this.products,quantity:this.products}
-     
-      //console.log("ngOnInit :"+JSON.stringify(cartProduct));
-      //this.products.forEach(element => {
-       //console.log(element.products)
-      
-       
-       //localStorage.setItem('cartObj',JSON.stringify(cartProduct));
-      //});
-      //this.grandTotal = this.cartService.getTotalPrice(cartProduct.products,cartProduct.quantity);
    
-    //});
 
   }
-  //removeItem(item: any){
-    //this.cartService.removeCartItem(item);
- // }
-  //emptycart(){
-    //this.cartService.removeAllCart();
-  //}
-//}
-
+ 
